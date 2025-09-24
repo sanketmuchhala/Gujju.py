@@ -243,7 +243,7 @@ aavjo bhai'''
             format_code(source)
 
     def test_real_example_formatting(self):
-        """Test formatting of the hello.kem example."""
+        """Test formatting of the hello.jsk example."""
         source = '''kem bhai
 aa naam che bapu tame bolo
 bhai bol"kem cho, "+naam+"!"
@@ -255,7 +255,7 @@ aavjo bhai'''
         assert 'bhai bol "kem cho, " + naam + "!"' in formatted
 
     def test_loop_example_formatting(self):
-        """Test formatting of loop_and_if.kem example."""
+        """Test formatting of loop_and_if.jsk example."""
         source = '''kem bhai
 aa i che 0
 farvu{bhai bol i

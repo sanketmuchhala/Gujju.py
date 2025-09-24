@@ -349,7 +349,7 @@ class TestExecution:
         assert lines == ["2.5", "2"]  # 4.0 becomes "2" due to stringify logic
 
     def test_complete_example_hello(self):
-        """Test the hello.kem example."""
+        """Test the hello.jsk example."""
         source = '''kem bhai
         aa naam che bapu tame bolo
         bhai bol "kem cho, " + naam + "!"
@@ -360,7 +360,7 @@ class TestExecution:
         assert output.strip() == "kem cho, Sanket!"
 
     def test_complete_example_loop_and_if(self):
-        """Test the loop_and_if.kem example."""
+        """Test the loop_and_if.jsk example."""
         source = '''kem bhai
         aa i che 0
         farvu {

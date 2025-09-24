@@ -16,7 +16,7 @@ class TestCLI:
         assert "0.1.0" in result.stdout
 
     def test_run_valid_file(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             bhai bol "Hello from CLI!"
             aavjo bhai''')
@@ -29,7 +29,7 @@ class TestCLI:
         Path(f.name).unlink()
 
     def test_run_file_with_trace(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             aa x che 42
             bhai bol x
@@ -45,12 +45,12 @@ class TestCLI:
         Path(f.name).unlink()
 
     def test_run_nonexistent_file(self):
-        result = self.runner.invoke(app, ["run-file", "nonexistent.kem"])
+        result = self.runner.invoke(app, ["run-file", "nonexistent.jsk"])
         assert result.exit_code == 1
         assert "not found" in result.stdout
 
     def test_run_invalid_syntax(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             invalid syntax here
             aavjo bhai''')
@@ -62,7 +62,7 @@ class TestCLI:
         Path(f.name).unlink()
 
     def test_tokens_command(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             aa x che 42
             aavjo bhai''')
@@ -80,7 +80,7 @@ class TestCLI:
         Path(f.name).unlink()
 
     def test_ast_command(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             bhai bol "hello"
             aavjo bhai''')
@@ -93,7 +93,7 @@ class TestCLI:
         Path(f.name).unlink()
 
     def test_fmt_command_single_file(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             # Poorly formatted code
             f.write('''kem bhai
 aa x che 42
@@ -112,7 +112,7 @@ aavjo bhai''')
         Path(f.name).unlink()
 
     def test_fmt_command_check_mode(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             # Poorly formatted code
             f.write('''kem bhai
 aa x che 42
@@ -135,34 +135,34 @@ aavjo bhai''')
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
 
-            # Create multiple .kem files
-            (temp_path / "file1.kem").write_text('''kem bhai
+            # Create multiple .jsk files
+            (temp_path / "file1.jsk").write_text('''kem bhai
 aa x che 1
 aavjo bhai''')
 
-            (temp_path / "file2.kem").write_text('''kem bhai
+            (temp_path / "file2.jsk").write_text('''kem bhai
 aa y che 2
 aavjo bhai''')
 
-            # Create a non-.kem file that should be ignored
+            # Create a non-.jsk file that should be ignored
             (temp_path / "readme.txt").write_text("This should be ignored")
 
             result = self.runner.invoke(app, ["fmt", str(temp_path)])
             assert result.exit_code == 0
-            # Should process the .kem files
-            assert "file1.kem" in result.stdout or "file2.kem" in result.stdout
+            # Should process the .jsk files
+            assert "file1.jsk" in result.stdout or "file2.jsk" in result.stdout
 
     def test_fmt_no_kem_files(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_path = Path(temp_dir)
-            (temp_path / "readme.txt").write_text("No .kem files here")
+            (temp_path / "readme.txt").write_text("No .jsk files here")
 
             result = self.runner.invoke(app, ["fmt", str(temp_path)])
             assert result.exit_code == 0
-            assert "No .kem files found" in result.stdout
+            assert "No .jsk files found" in result.stdout
 
     def test_ast_command_parse_error(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             bhai bol "unterminated string
             aavjo bhai''')
@@ -175,7 +175,7 @@ aavjo bhai''')
         Path(f.name).unlink()
 
     def test_tokens_command_lexer_error(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             aa x che "unterminated string
             aavjo bhai''')
@@ -194,7 +194,7 @@ aavjo bhai''')
         assert "Ctrl+D" in result.stdout
 
     def test_fmt_invalid_syntax_file(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             this is not valid syntax @#$
             aavjo bhai''')
@@ -207,7 +207,7 @@ aavjo bhai''')
         Path(f.name).unlink()
 
     def test_run_file_runtime_error(self):
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.kem', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.jsk', delete=False) as f:
             f.write('''kem bhai
             bhai bol 1 / 0
             aavjo bhai''')
@@ -229,7 +229,7 @@ aavjo bhai''')
             result = self.runner.invoke(app, ["run-file", f.name])
             assert result.exit_code == 0
             assert "Warning" in result.stdout
-            assert ".kem extension" in result.stdout
+            assert ".jsk extension" in result.stdout
             assert "hello" in result.stdout
 
         Path(f.name).unlink()

@@ -25,7 +25,7 @@
           "kemlang"
         ],
         "extensions": [
-          ".kem"
+          ".jsk"
         ],
         "configuration": "./language-configuration.json"
       }

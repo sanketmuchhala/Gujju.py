@@ -286,8 +286,8 @@ aavjo bhai'''
                 assert exit_code in [0, 1]
 
             except (LexerError, ParseError, ValueError):
-                # Some examples are designed to fail (like the errors.kem)
-                if i == 2:  # errors.kem should fail
+                # Some examples are designed to fail (like the errors.jsk)
+                if i == 2:  # errors.jsk should fail
                     continue
                 else:
                     raise

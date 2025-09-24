@@ -63,8 +63,8 @@ def run_file(
         console.print(f"[red]Error: File '{file}' not found[/red]")
         raise typer.Exit(1)
 
-    if not file.suffix == '.kem':
-        console.print(f"[yellow]Warning: File '{file}' doesn't have .kem extension[/yellow]")
+    if not file.suffix == '.jsk':
+        console.print(f"[yellow]Warning: File '{file}' doesn't have .jsk extension[/yellow]")
 
     try:
         source = file.read_text()
@@ -148,13 +148,13 @@ def fmt(
     if path.is_file():
         files = [path]
     elif path.is_dir():
-        files = list(path.rglob("*.kem"))
+        files = list(path.rglob("*.jsk"))
     else:
         console.print(f"[red]Error: '{path}' is not a file or directory[/red]")
         raise typer.Exit(1)
 
     if not files:
-        console.print("[yellow]No .kem files found[/yellow]")
+        console.print("[yellow]No .jsk files found[/yellow]")
         return
 
     changed_files = []
