@@ -1,7 +1,5 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "rootDirectory": "kemlang-website"
+  "buildCommand": "cd kemlang-website && npm install && npm run build",
+  "outputDirectory": "kemlang-website/.next",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./kemlang-website"
 }
