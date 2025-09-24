@@ -6,6 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kemlang.vercel.app'),
   title: {
     default: "KemLang - Gujarati Programming Language",
     template: "%s | KemLang"
