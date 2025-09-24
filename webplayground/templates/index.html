@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KemLang Playground</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #ff9a00 0%, #ffcd3c 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .playground {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            min-height: 600px;
+        }
+
+        .editor-section, .output-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .examples-dropdown {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+        }
+
+        textarea {
+            flex: 1;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            resize: none;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+        }
+
+        .input-section {
+            margin-top: 10px;
+        }
+
+        .input-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-section input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .controls {
+            margin: 15px 0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .run-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .run-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .run-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .clear-button {
+            background: #f1f1f1;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .clear-button:hover {
+            background: #e1e1e1;
+        }
+
+        .output {
+            flex: 1;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            min-height: 200px;
+        }
+
+        .output.success {
+            border-left: 4px solid #28a745;
+        }
+
+        .output.error {
+            border-left: 4px solid #dc3545;
+            color: #dc3545;
+        }
+
+        .loading {
+            display: none;
+            color: #667eea;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .playground {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        .syntax-highlight {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .syntax-highlight h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .keyword {
+            color: #d73a49;
+            font-weight: bold;
+        }
+
+        .string {
+            color: #032f62;
+        }
+
+        .number {
+            color: #005cc5;
+        }
+
+        .comment {
+            color: #6a737d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧡 KemLang Playground</h1>
+            <p>A Gujarati-flavored programming language - Write, Run, Learn!</p>
+        </div>
+
+        <div class="playground">
+            <div class="editor-section">
+                <div class="section-header">
+                    <span class="section-title">📝 Code Editor</span>
+                    <select class="examples-dropdown" id="examplesSelect">
+                        <option value="">Select an example...</option>
+                    </select>
+                </div>
+                <textarea id="codeEditor" placeholder="Enter your KemLang code here...
+
+Example:
+kem bhai
+aa naam che bapu tame bolo
+bhai bol &quot;kem cho, &quot; + naam + &quot;!&quot;
+aavjo bhai"></textarea>
+
+                <div class="input-section">
+                    <label for="userInput">💬 Program Input (for bapu tame bolo):</label>
+                    <input type="text" id="userInput" placeholder="Enter input for your program...">
+                </div>
+
+                <div class="controls">
+                    <button class="run-button" id="runButton">▶️ Run Code</button>
+                    <button class="clear-button" id="clearButton">🗑️ Clear</button>
+                    <span class="loading" id="loading">⏳ Running...</span>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <span class="section-title">📊 Output</span>
+                </div>
+                <div class="output" id="output">Ready to run your KemLang code! 🚀
+
+Click "Run Code" to execute your program.</div>
+
+                <div class="syntax-highlight">
+                    <h4>🎨 KemLang Syntax Quick Reference:</h4>
+                    <div>
+                        <span class="keyword">kem bhai</span> ... <span class="keyword">aavjo bhai</span> - Program fence<br>
+                        <span class="keyword">bhai bol</span> <span class="string">"hello"</span> - Print output<br>
+                        <span class="keyword">aa</span> name <span class="keyword">che</span> <span class="number">42</span> - Declare variable<br>
+                        name <span class="keyword">che</span> <span class="number">100</span> - Assign variable<br>
+                        <span class="keyword">bapu tame bolo</span> - Read input<br>
+                        <span class="keyword">jo</span> condition { ... } - If statement<br>
+                        <span class="keyword">farvu</span> { ... } <span class="keyword">jya sudhi</span> condition - While loop<br>
+                        <span class="keyword">bhai chhe</span> / <span class="keyword">bhai nathi</span> - true / false
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                ⚠️ <strong>Development Only:</strong> This playground runs code without sandboxing.
+                <br>
+                Learn more about KemLang: <a href="https://github.com/kemlang/kemlang" target="_blank">GitHub Repository</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const codeEditor = document.getElementById('codeEditor');
+        const userInput = document.getElementById('userInput');
+        const runButton = document.getElementById('runButton');
+        const clearButton = document.getElementById('clearButton');
+        const output = document.getElementById('output');
+        const loading = document.getElementById('loading');
+        const examplesSelect = document.getElementById('examplesSelect');
+
+        // Load examples
+        fetch('/examples')
+            .then(response => response.json())
+            .then(examples => {
+                for (const [key, example] of Object.entries(examples)) {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = example.name;
+                    examplesSelect.appendChild(option);
+                }
+            })
+            .catch(err => console.error('Failed to load examples:', err));
+
+        // Handle example selection
+        examplesSelect.addEventListener('change', (e) => {
+            if (!e.target.value) return;
+
+            fetch('/examples')
+                .then(response => response.json())
+                .then(examples => {
+                    const example = examples[e.target.value];
+                    if (example) {
+                        codeEditor.value = example.code;
+                        userInput.value = example.input || '';
+                    }
+                });
+        });
+
+        // Run code
+        runButton.addEventListener('click', async () => {
+            const code = codeEditor.value.trim();
+            const input = userInput.value;
+
+            if (!code) {
+                output.textContent = 'Please enter some code to run!';
+                output.className = 'output';
+                return;
+            }
+
+            // Show loading state
+            runButton.disabled = true;
+            loading.style.display = 'inline';
+            output.textContent = 'Running your code...';
+            output.className = 'output';
+
+            try {
+                const response = await fetch('/run', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        code: code,
+                        input: input
+                    })
+                });
+
+                const result = await response.json();
+
+                let outputText = '';
+                if (result.output) {
+                    outputText += result.output;
+                }
+                if (result.error) {
+                    outputText += (outputText ? '\n\n' : '') + '❌ Error:\n' + result.error;
+                }
+
+                if (!outputText) {
+                    outputText = result.success
+                        ? '✅ Program completed successfully (no output)'
+                        : '❌ Program failed (no output)';
+                }
+
+                output.textContent = outputText;
+                output.className = result.success ? 'output success' : 'output error';
+
+            } catch (error) {
+                output.textContent = '🔥 Network error: ' + error.message;
+                output.className = 'output error';
+            } finally {
+                runButton.disabled = false;
+                loading.style.display = 'none';
+            }
+        });
+
+        // Clear code
+        clearButton.addEventListener('click', () => {
+            codeEditor.value = '';
+            userInput.value = '';
+            output.textContent = 'Ready to run your KemLang code! 🚀\n\nClick "Run Code" to execute your program.';
+            output.className = 'output';
+            examplesSelect.value = '';
+        });
+
+        // Keyboard shortcuts
+        codeEditor.addEventListener('keydown', (e) => {
+            // Ctrl+Enter to run
+            if (e.ctrlKey && e.key === 'Enter') {
+                e.preventDefault();
+                runButton.click();
+            }
+            // Tab support
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                const start = e.target.selectionStart;
+                const end = e.target.selectionEnd;
+                e.target.value = e.target.value.substring(0, start) + '  ' + e.target.value.substring(end);
+                e.target.selectionStart = e.target.selectionEnd = start + 2;
+            }
+        });
+
+        // Auto-resize textarea
+        function adjustTextareaHeight() {
+            codeEditor.style.height = 'auto';
+            codeEditor.style.height = Math.max(300, codeEditor.scrollHeight) + 'px';
+        }
+
+        codeEditor.addEventListener('input', adjustTextareaHeight);
+        window.addEventListener('load', adjustTextareaHeight);
+    </script>
+</body>
+</html>

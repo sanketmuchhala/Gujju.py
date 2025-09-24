@@ -1,0 +1,60 @@
+# Ruff configuration file
+target-version = "py310"
+line-length = 100
+
+# Enable additional rules
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "C4",  # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "N",   # pep8-naming (selective)
+    "SIM", # flake8-simplify (selective)
+]
+
+ignore = [
+    "E501",   # line too long (handled by black)
+    "N805",   # first argument should be named 'self'
+    "N806",   # variable should be lowercase
+    "SIM108", # use ternary operator (not always clearer)
+]
+
+# Exclude patterns
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+[lint.isort]
+known-first-party = ["kemlang"]
+force-single-line = false
+lines-after-imports = 2
+
+[lint.mccabe]
+max-complexity = 10
+
+[lint.per-file-ignores]
+"tests/*" = ["D", "S101"]  # Allow assert statements in tests
+"__init__.py" = ["F401"]   # Allow unused imports in __init__.py

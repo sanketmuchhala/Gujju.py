@@ -1,0 +1,14 @@
+kem bhai
+aa i che 0
+farvu {
+  bhai bol i
+  i che i + 1
+  jo i == 5 { tame jao }
+} jya sudhi i < 10
+
+jo i == 5 {
+  bhai bol "panch ma masti!"
+} nahi to {
+  bhai bol "kuch to gadbad chhe!"
+}
+aavjo bhai

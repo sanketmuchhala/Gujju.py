@@ -1,0 +1,148 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "KemLang",
+  "scopeName": "source.kemlang",
+  "patterns": [
+    {
+      "include": "#program-fence"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#booleans"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#identifiers"
+    },
+    {
+      "include": "#punctuation"
+    }
+  ],
+  "repository": {
+    "program-fence": {
+      "patterns": [
+        {
+          "name": "keyword.control.program.start.kemlang",
+          "match": "\\b(kem bhai)\\b"
+        },
+        {
+          "name": "keyword.control.program.end.kemlang",
+          "match": "\\b(aavjo bhai)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.print.kemlang",
+          "match": "\\b(bhai bol)\\b"
+        },
+        {
+          "name": "keyword.control.input.kemlang",
+          "match": "\\b(bapu tame bolo)\\b"
+        },
+        {
+          "name": "keyword.control.conditional.kemlang",
+          "match": "\\b(jo|nahi to)\\b"
+        },
+        {
+          "name": "keyword.control.loop.kemlang",
+          "match": "\\b(farvu|jya sudhi)\\b"
+        },
+        {
+          "name": "keyword.control.flow.kemlang",
+          "match": "\\b(tame jao|aagal vado)\\b"
+        },
+        {
+          "name": "keyword.operator.declaration.kemlang",
+          "match": "\\b(aa)\\b"
+        },
+        {
+          "name": "keyword.operator.assignment.kemlang",
+          "match": "\\b(che)\\b"
+        },
+        {
+          "name": "keyword.other.kemlang",
+          "match": "\\b(nahi|to)\\b"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.true.kemlang",
+          "match": "\\b(bhai chhe)\\b"
+        },
+        {
+          "name": "constant.language.boolean.false.kemlang",
+          "match": "\\b(bhai nathi)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.kemlang",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.kemlang",
+          "match": "\\\\(n|t|\"|\\\\)"
+        },
+        {
+          "name": "invalid.illegal.unknown-escape.kemlang",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.kemlang",
+      "match": "\\b\\d+\\b"
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.kemlang",
+          "match": "[+\\-*/%]"
+        },
+        {
+          "name": "keyword.operator.comparison.kemlang",
+          "match": "(==|!=|<=|>=|<|>)"
+        }
+      ]
+    },
+    "identifiers": {
+      "name": "variable.other.kemlang",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.section.block.begin.kemlang",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.section.block.end.kemlang",
+          "match": "\\}"
+        },
+        {
+          "name": "punctuation.section.parens.begin.kemlang",
+          "match": "\\("
+        },
+        {
+          "name": "punctuation.section.parens.end.kemlang",
+          "match": "\\)"
+        }
+      ]
+    }
+  }
+}
