@@ -1,5 +1,4 @@
 {
   "buildCommand": "cd kemlang-website && npm install && npm run build",
-  "outputDirectory": "kemlang-website/.next",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./kemlang-website"
+  "outputDirectory": "kemlang-website/.next"
 }
