@@ -1,11 +1,11 @@
 # KemLang VS Code Extension
 
-This extension provides syntax highlighting for KemLang (.kem) files in Visual Studio Code.
+This extension provides syntax highlighting for KemLang (.jsk) files in Visual Studio Code.
 
 ## Features
 
 - Syntax highlighting for KemLang keywords, operators, strings, and numbers
-- Recognition of .kem file extension
+- Recognition of .jsk file extension
 - Proper highlighting of Gujarati-flavored keywords like:
   - `kem bhai` / `aavjo bhai` (program fence)
   - `bhai bol` (print)
@@ -40,7 +40,7 @@ This extension provides syntax highlighting for KemLang (.kem) files in Visual S
 
 ## Usage
 
-1. Create a new file with `.kem` extension
+1. Create a new file with `.jsk` extension
 2. VS Code will automatically apply KemLang syntax highlighting
 3. Start coding in KemLang!
 
@@ -67,7 +67,7 @@ To contribute to this extension:
 2. Navigate to `editor/kemlang-vscode/`
 3. Run `npm install`
 4. Press `F5` to launch a new Extension Development Host window
-5. Test your changes with `.kem` files
+5. Test your changes with `.jsk` files
 
 ## Language Reference
 

@@ -75,7 +75,7 @@ class TestPropertyFuzz:
             # Some combinations might be invalid (like multiple = signs)
             pass
 
-    @given(st.integers(min_value=1, max_size=10))
+    @given(st.integers(min_value=1, max_value=10))
     def test_nested_parentheses_parsing(self, depth):
         """Property: Deeply nested parentheses should not crash the parser."""
         # Generate nested parentheses expression: (((...(42)...)))

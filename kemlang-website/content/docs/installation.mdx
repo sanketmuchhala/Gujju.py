@@ -1,0 +1,110 @@
+---
+title: "Installation"
+description: "Install KemLang on your system and start coding in Gujarati."
+order: 1
+---
+
+# Installation
+
+Get KemLang up and running on your system in just a few steps.
+
+## System Requirements
+
+KemLang runs on:
+- Windows 10/11
+- macOS 10.15+
+- Linux (Ubuntu 18.04+, CentOS 7+)
+- Python 3.8+ (for source installation)
+
+## Quick Install
+
+### Using npm (Recommended)
+
+The fastest way to install KemLang is using npm:
+
+```bash
+npm install -g kemlang
+```
+
+Verify the installation:
+
+```bash
+kem version
+```
+
+### Using pipx
+
+If you prefer Python package management:
+
+```bash
+pipx install kemlang
+```
+
+Verify the installation:
+
+```bash
+kem version
+```
+
+## Alternative Installation Methods
+
+### From Source
+
+Clone and build from source:
+
+```bash
+git clone https://github.com/kemlang/kemlang.git
+cd kemlang
+python -m pip install -e .
+```
+
+### Using pip
+
+```bash
+pip install kemlang
+```
+
+## Troubleshooting
+
+### Command not found
+
+If you get "command not found" after installation:
+
+1. **npm users**: Make sure your global npm bin directory is in your PATH
+2. **pipx users**: Ensure pipx's bin directory is in your PATH
+3. **Windows users**: You may need to restart your terminal
+
+### Permission errors
+
+If you encounter permission errors:
+
+```bash
+# For npm (Linux/macOS)
+sudo npm install -g kemlang
+
+# For pip
+pip install --user kemlang
+```
+
+## Next Steps
+
+Now that KemLang is installed:
+
+1. Try the [Quick Start](/docs/quick-start) guide
+2. Learn the [basic syntax](/docs/language/syntax)
+3. Experiment in the [Playground](/playground)
+
+## Updating KemLang
+
+Keep your installation up to date:
+
+```bash
+# npm
+npm update -g kemlang
+
+# pipx
+pipx upgrade kemlang
+
+# pip
+pip install --upgrade kemlang
+```

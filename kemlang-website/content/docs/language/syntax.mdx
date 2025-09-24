@@ -1,0 +1,174 @@
+---
+title: "Syntax"
+description: "Learn the basic syntax and structure of KemLang programs."
+order: 1
+---
+
+# KemLang Syntax
+
+KemLang uses natural Gujarati words to make programming intuitive and accessible.
+
+## Program Structure
+
+Every KemLang program follows this basic structure:
+
+```jsk
+kem bhai
+    // Your code here
+aavjo bhai
+```
+
+- `kem bhai` - Starts the program (literally "Hello friend")
+- `aavjo bhai` - Ends the program (literally "Goodbye friend")
+
+## Variables
+
+### Declaration
+
+Declare variables using `aa ... che`:
+
+```jsk
+aa naam che "Sanket"
+aa age che 25
+aa isStudent che true
+```
+
+### Reassignment
+
+Change variable values:
+
+```jsk
+aa counter che 0
+counter che 1
+counter che counter + 1
+```
+
+## Data Types
+
+KemLang supports several data types:
+
+### Strings
+
+```jsk
+aa message che "Hello, World!"
+aa name che 'Single quotes also work'
+```
+
+### Numbers
+
+```jsk
+aa integer che 42
+aa decimal che 3.14
+aa negative che -10
+```
+
+### Booleans
+
+```jsk
+aa isTrue che true
+aa isFalse che false
+```
+
+## Output
+
+Use `bhai bol` to print output:
+
+```jsk
+kem bhai
+bhai bol "Hello, World!"
+bhai bol 42
+bhai bol true
+aavjo bhai
+```
+
+## String Concatenation
+
+Combine strings and variables:
+
+```jsk
+kem bhai
+aa firstName che "Sanket"
+aa lastName che "Patel"
+aa fullName che firstName + " " + lastName
+bhai bol fullName
+aavjo bhai
+```
+
+## Comments
+
+Add comments to document your code:
+
+```jsk
+// This is a single-line comment
+kem bhai
+    aa name che "KemLang"  // Comment at end of line
+    bhai bol name
+aavjo bhai
+```
+
+## Arithmetic Operations
+
+Basic math operations:
+
+```jsk
+kem bhai
+aa a che 10
+aa b che 5
+
+bhai bol a + b    // Addition: 15
+bhai bol a - b    // Subtraction: 5
+bhai bol a * b    // Multiplication: 50
+bhai bol a / b    // Division: 2
+aavjo bhai
+```
+
+## Examples
+
+### Hello World
+
+```jsk
+kem bhai
+bhai bol "Hello, World!"
+aavjo bhai
+```
+
+### Personal Greeting
+
+```jsk
+kem bhai
+aa naam che "Sanket"
+aa greeting che "kem cho, " + naam + "!"
+bhai bol greeting
+aavjo bhai
+```
+
+### Simple Calculator
+
+```jsk
+kem bhai
+aa num1 che 15
+aa num2 che 25
+aa sum che num1 + num2
+
+bhai bol "First number: " + num1
+bhai bol "Second number: " + num2
+bhai bol "Sum: " + sum
+aavjo bhai
+```
+
+## Keywords Reference
+
+| Keyword | Purpose | Example |
+|---------|---------|---------|
+| `kem bhai` | Start program | `kem bhai` |
+| `aavjo bhai` | End program | `aavjo bhai` |
+| `aa ... che` | Declare variable | `aa naam che "value"` |
+| `bhai bol` | Print output | `bhai bol "Hello"` |
+| `true` | Boolean true | `aa flag che true` |
+| `false` | Boolean false | `aa flag che false` |
+
+## Next Steps
+
+- Learn about [Variables](/docs/language/variables) in detail
+- Explore [Control Flow](/docs/language/control-flow) statements
+- Try the [Examples](/docs/examples) section

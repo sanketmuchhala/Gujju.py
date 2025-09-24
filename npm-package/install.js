@@ -77,8 +77,8 @@ function installKemLang() {
             console.log('Try these commands:');
             console.log('  kem version          # Show version');
             console.log('  kem repl             # Start interactive REPL');
-            console.log('  echo "kem bhai\\nbhai bol \\"Hello!\\"\\naavjo bhai" > hello.kem');
-            console.log('  kem run-file hello.kem    # Run a file');
+            console.log('  echo "kem bhai\\nbhai bol \\"Hello!\\"\\naavjo bhai" > hello.jsk');
+            console.log('  kem run-file hello.jsk    # Run a file');
             console.log('');
         } catch (e) {
             console.error('⚠️  Installation completed but kem command not found in PATH');

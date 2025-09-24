@@ -52,7 +52,7 @@ pip install -e ".[dev,test]"
 
 ### Hello World
 
-Create a file `hello.kem`:
+Create a file `hello.jsk`:
 
 ```kemlang
 kem bhai
@@ -64,7 +64,7 @@ aavjo bhai
 Run it:
 
 ```bash
-kem run hello.kem
+kem run hello.jsk
 # Input: Sanket
 # Output: kem cho, Sanket!
 ```
@@ -143,23 +143,23 @@ BOOL         := "bhai chhe" | "bhai nathi"
 
 ```bash
 # Run a KemLang file
-kem run file.kem
+kem run file.jsk
 
 # Run with tracing (show tokens and AST)
-kem run file.kem --trace
+kem run file.jsk --trace
 
 # Interactive REPL
 kem repl
 
 # Format code
-kem fmt file.kem
+kem fmt file.jsk
 kem fmt --check .  # Check if files need formatting
 
 # Show tokens
-kem tokens file.kem
+kem tokens file.jsk
 
 # Show AST
-kem ast file.kem
+kem ast file.jsk
 
 # Version info
 kem version
@@ -273,7 +273,7 @@ mypy kemlang
 1. Navigate to `editor/kemlang-vscode/`
 2. Run `npm install && npm run compile`
 3. Press F5 to launch Extension Development Host
-4. Open a `.kem` file to see syntax highlighting
+4. Open a `.jsk` file to see syntax highlighting
 
 ### Web Playground
 
