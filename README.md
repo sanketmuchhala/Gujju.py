@@ -1,4 +1,4 @@
-# KemLang 🚀
+# KemLang
 
 **A Gujarati-flavored, English-typed programming language**
 
@@ -11,21 +11,21 @@ KemLang is a fun, educational programming language inspired by Bhailang, featuri
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [🏗️ System Architecture](#️-system-architecture)
-- [🔄 Data Flow](#-data-flow)
-- [🚀 Deployment Architecture](#-deployment-architecture)
-- [✨ Features](#-features)
-- [⚡ Quick Start](#-quick-start)
-- [📚 Language Reference](#-language-reference)
-- [💻 CLI Usage](#-cli-usage)
-- [📖 Examples](#-examples)
-- [🛠️ Development](#️-development)
+- [System Architecture](#system-architecture)
+- [Data Flow](#data-flow)
+- [Deployment Architecture](#deployment-architecture)
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Language Reference](#language-reference)
+- [CLI Usage](#cli-usage)
+- [Examples](#examples)
+- [Development](#development)
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 KemLang follows a modular architecture with clear separation of concerns across different layers:
 
@@ -95,7 +95,7 @@ graph TB
     class Vercel,GitHub cloud
 ```
 
-### 🏗️ Component Overview
+### Component Overview
 
 | Component | Purpose | Technology |
 |-----------|---------|------------|
@@ -108,7 +108,7 @@ graph TB
 
 ---
 
-## 🔄 Data Flow
+## Data Flow
 
 The following diagram illustrates how KemLang code flows through the system from source to execution:
 
@@ -195,18 +195,18 @@ flowchart TD
     class Console,WebOutput,ErrorOutput,DebugInfo output
 ```
 
-### 🔄 Processing Pipeline
+### Processing Pipeline
 
-1. **📝 Source Input**: KemLang code from files, REPL, or web editor
-2. **🔍 Tokenization**: Breaking source code into meaningful tokens
-3. **🌳 Parsing**: Building an Abstract Syntax Tree (AST)
-4. **✅ Analysis**: Type checking and scope validation
-5. **⚡ Execution**: Tree-walking interpretation with runtime environment
-6. **📤 Output**: Results, errors, or debug information
+1. **Source Input**: KemLang code from files, REPL, or web editor
+2. **Tokenization**: Breaking source code into meaningful tokens
+3. **Parsing**: Building an Abstract Syntax Tree (AST)
+4. **Analysis**: Type checking and scope validation
+5. **Execution**: Tree-walking interpretation with runtime environment
+6. **Output**: Results, errors, or debug information
 
 ---
 
-## 🚀 Deployment Architecture
+## Deployment Architecture
 
 KemLang uses a modern cloud-native deployment strategy across multiple platforms:
 
@@ -295,7 +295,7 @@ graph TB
     class Vercel_Analytics,GitHub_Insights,Error_Tracking monitoring
 ```
 
-### 🚀 Deployment Environments
+### Deployment Environments
 
 | Environment | Platform | Purpose | URL |
 |-------------|----------|---------|-----|
@@ -306,22 +306,22 @@ graph TB
 
 ---
 
-## ✨ Features
+## Features
 
-- **🗣️ Gujarati-flavored keywords**: `kem bhai`, `bhai bol`, `bapu tame bolo`
-- **⌨️ English-typed syntax**: Easy to type on any keyboard
-- **📝 Simple grammar**: Variables, conditionals, loops, and expressions
-- **🚨 Rich error messages**: Line/column tracking with diagnostic snippets
-- **🛠️ CLI tools**: Run, format, debug, and analyze KemLang code
-- **💻 VS Code support**: Syntax highlighting extension included
-- **🌐 Web playground**: Interactive browser-based code editor
-- **📚 Comprehensive docs**: Full documentation at [kemlang.dev](https://kemlang.dev)
+- **Gujarati-flavored keywords**: `kem bhai`, `bhai bol`, `bapu tame bolo`
+- **English-typed syntax**: Easy to type on any keyboard
+- **Simple grammar**: Variables, conditionals, loops, and expressions
+- **Rich error messages**: Line/column tracking with diagnostic snippets
+- **CLI tools**: Run, format, debug, and analyze KemLang code
+- **VS Code support**: Syntax highlighting extension included
+- **Web playground**: Interactive browser-based code editor
+- **Comprehensive docs**: Full documentation at [kemlang.dev](https://kemlang.dev)
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
-### 📦 Installation
+### Installation
 
 #### **NPM (Recommended - Like Bhailang)**
 ```bash
@@ -351,7 +351,7 @@ cd kemlang
 pip install -e ".[dev,test]"
 ```
 
-### 👋 Hello World
+### Hello World
 
 Create a file `hello.jsk`:
 
@@ -372,7 +372,7 @@ kem run hello.jsk
 
 ---
 
-## 📚 Language Reference
+## Language Reference
 
 ### Program Structure
 
@@ -384,7 +384,7 @@ kem bhai
 aavjo bhai
 ```
 
-### 📋 Statements
+### Statements
 
 | Statement | Syntax | Description |
 |-----------|---------|-------------|
@@ -397,7 +397,7 @@ aavjo bhai
 | **Break** | `tame jao` | Exit current loop |
 | **Continue** | `aagal vado` | Skip to next loop iteration |
 
-### 🔢 Expressions
+### Expressions
 
 | Type | Syntax | Example |
 |------|---------|---------|
@@ -407,7 +407,7 @@ aavjo bhai
 | **Input** | `bapu tame bolo` | Read line from stdin |
 | **Variables** | `naam`, `count` | Identifier references |
 
-### ⚙️ Operators
+### Operators
 
 | Category | Operators | Precedence |
 |----------|-----------|------------|
@@ -417,7 +417,7 @@ aavjo bhai
 
 **Note**: String concatenation uses `+` operator (string + string only).
 
-### 📝 Language Grammar (EBNF)
+### Language Grammar (EBNF)
 
 ```ebnf
 program      := start_fence stmt* end_fence
@@ -444,7 +444,7 @@ BOOL         := "bhai chhe" | "bhai nathi"
 
 ---
 
-## 💻 CLI Usage
+## CLI Usage
 
 ```bash
 # Run a KemLang file
@@ -472,9 +472,9 @@ kem version
 
 ---
 
-## 📖 Examples
+## Examples
 
-### 🔢 Variables and Arithmetic
+### Variables and Arithmetic
 
 ```kemlang
 kem bhai
@@ -487,7 +487,7 @@ bhai bol "x > y: " + (x > y)
 aavjo bhai
 ```
 
-### 🔀 Conditionals
+### Conditionals
 
 ```kemlang
 kem bhai
@@ -501,7 +501,7 @@ jo age >= 18 {
 aavjo bhai
 ```
 
-### 🔄 Loops
+### Loops
 
 ```kemlang
 kem bhai
@@ -514,7 +514,7 @@ farvu {
 aavjo bhai
 ```
 
-### 💬 Input and Interaction
+### Input and Interaction
 
 ```kemlang
 kem bhai
@@ -531,7 +531,7 @@ aavjo bhai
 
 ---
 
-## 🚨 Error Messages
+## Error Messages
 
 KemLang provides helpful error messages with source context:
 
@@ -549,9 +549,9 @@ Runtime Error: TypeError: cannot + int and str
 
 ---
 
-## 🛠️ Development
+## Development
 
-### 🏗️ Setup
+### Setup
 
 ```bash
 git clone https://github.com/sanketmuchhala/Gujju.py
@@ -560,7 +560,7 @@ pip install -e ".[dev,test]"
 pre-commit install
 ```
 
-### 🧪 Testing
+### Testing
 
 ```bash
 # Run all tests
@@ -577,14 +577,14 @@ ruff check kemlang tests
 mypy kemlang
 ```
 
-### 💻 VS Code Extension
+### VS Code Extension
 
 1. Navigate to `editor/kemlang-vscode/`
 2. Run `npm install && npm run compile`
 3. Press F5 to launch Extension Development Host
 4. Open a `.jsk` file to see syntax highlighting
 
-### 🌐 Web Playground
+### Web Playground
 
 The web playground is available at [kemlang.dev/playground](https://kemlang.dev/playground) and built with Next.js.
 
@@ -598,9 +598,9 @@ npm run dev
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
-### 🎯 Upcoming Features
+### Upcoming Features
 
 ```mermaid
 gantt
@@ -621,7 +621,7 @@ gantt
     Cloud IDE Integration   :2024-08-01, 60d
 ```
 
-### 📋 Feature Checklist
+### Feature Checklist
 
 - [ ] **Functions**: `function naam(args) { ... }`
 - [ ] **Arrays**: `[1, 2, 3]` and `obj[index]`
@@ -637,11 +637,11 @@ gantt
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-### 🚀 Quick Contribution Guide
+### Quick Contribution Guide
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
@@ -651,19 +651,19 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 6. Push to branch: `git push origin feature/amazing-feature`
 7. Open a Pull Request
 
-### 📜 Code of Conduct
+### Code of Conduct
 
 This project follows our [Code of Conduct](CODE_OF_CONDUCT.md). Please be respectful and inclusive.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by [Bhailang](https://github.com/DulLabs/bhai-lang)
 - Built with Python, Typer, and Rich
@@ -672,19 +672,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Support
+## Support
 
-- **🐛 Issues**: [GitHub Issues](https://github.com/sanketmuchhala/Gujju.py/issues)
-- **💬 Discussions**: [GitHub Discussions](https://github.com/sanketmuchhala/Gujju.py/discussions)
-- **📧 Email**: [Support](mailto:support@kemlang.dev)
-- **🌐 Website**: [kemlang.dev](https://kemlang.dev)
+- **Issues**: [GitHub Issues](https://github.com/sanketmuchhala/Gujju.py/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/sanketmuchhala/Gujju.py/discussions)
+- **Email**: [Support](mailto:support@kemlang.dev)
+- **Website**: [kemlang.dev](https://kemlang.dev)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ for the Gujarati developer community**
+**Made with love for the Gujarati developer community**
 
-[🌐 Website](https://kemlang.dev) • [📚 Docs](https://kemlang.dev/docs) • [🎮 Playground](https://kemlang.dev/playground) • [📝 Blog](https://kemlang.dev/changelog)
+[Website](https://kemlang.dev) • [Docs](https://kemlang.dev/docs) • [Playground](https://kemlang.dev/playground) • [Blog](https://kemlang.dev/changelog)
 
 </div>
