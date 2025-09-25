@@ -1,5 +1,9 @@
 {
+  "functions": {
+    "kemlang-website/app/**": {
+      "maxDuration": 30
+    }
+  },
   "buildCommand": "cd kemlang-website && npm install && npm run build:vercel",
-  "outputDirectory": "kemlang-website/public",
-  "installCommand": "cd kemlang-website && npm install"
+  "outputDirectory": "kemlang-website/public"
 }
