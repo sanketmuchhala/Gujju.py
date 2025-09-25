@@ -1,5 +1,5 @@
 {
   "buildCommand": "cd kemlang-website && npm install && npm run build",
-  "outputDirectory": "kemlang-website/out",
+  "outputDirectory": "out",
   "installCommand": "cd kemlang-website && npm install"
 }
