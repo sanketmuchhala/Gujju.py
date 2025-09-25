@@ -39,7 +39,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <nav className="flex items-center space-x-2">
             <Link
-              href="https://github.com/kemlang/kemlang"
+              href="https://github.com/sanketmuchhala/Gujju.py"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground h-9 w-9"

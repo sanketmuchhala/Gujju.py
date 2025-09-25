@@ -97,7 +97,7 @@ export default function DocsPage() {
       ## Need Help?
 
       - Check out our [examples](/docs/examples) for common programming patterns
-      - Visit the [GitHub repository](https://github.com/kemlang/kemlang) to contribute or report issues
+      - Visit the [GitHub repository](https://github.com/sanketmuchhala/Gujju.py) to contribute or report issues
       - Read the [language guide](/docs/language/syntax) for detailed syntax information
 
       Let&apos;s start coding in Gujarati!

@@ -8,7 +8,7 @@ export function SiteFooter() {
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built by the{" "}
             <Link
-              href="https://github.com/kemlang"
+              href="https://github.com/sanketmuchhala"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
@@ -17,7 +17,7 @@ export function SiteFooter() {
             </Link>
             . The source code is available on{" "}
             <Link
-              href="https://github.com/kemlang/kemlang"
+              href="https://github.com/sanketmuchhala/Gujju.py"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
@@ -41,7 +41,7 @@ export function SiteFooter() {
             Playground
           </Link>
           <Link
-            href="https://github.com/kemlang/kemlang"
+            href="https://github.com/sanketmuchhala/Gujju.py"
             target="_blank"
             rel="noreferrer"
             className="text-sm text-muted-foreground hover:text-foreground"

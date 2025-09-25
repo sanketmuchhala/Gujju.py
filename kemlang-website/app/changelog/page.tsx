@@ -142,7 +142,7 @@ export default function ChangelogPage() {
               KemLang follows semantic versioning. For detailed technical changes and breaking changes,
               visit our{" "}
               <a
-                href="https://github.com/kemlang/kemlang/releases"
+                href="https://github.com/sanketmuchhala/Gujju.py/releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:no-underline"
