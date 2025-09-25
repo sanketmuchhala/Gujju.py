@@ -1,12 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "kemlang-website/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "distDir": ".next"
-      }
-    }
-  ]
+  "buildCommand": "cd kemlang-website && npm install && npm run build",
+  "outputDirectory": "kemlang-website/out",
+  "installCommand": "cd kemlang-website && npm install"
 }
