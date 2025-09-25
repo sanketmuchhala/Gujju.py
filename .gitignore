@@ -162,3 +162,316 @@ out/
 # KemLang specific
 *.kem.out
 test_output/
+
+# =========================
+# SECURITY & SENSITIVE FILES
+# =========================
+
+# Environment variables and secrets
+.env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging
+.env.prod
+*.env
+config.json
+secrets.json
+secrets.yaml
+secrets.yml
+.secrets
+.secret
+
+# API Keys and Authentication
+.api_key
+.api_keys
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.csr
+*.der
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+*.pub
+.ssh/
+.gnupg/
+
+# Database credentials and files
+database.yml
+database.json
+*.db
+*.sqlite
+*.sqlite3
+*.db3
+*.s3db
+*.sl3
+config/database.yml
+.database
+
+# Configuration files with sensitive data
+config/secrets.yml
+config/master.key
+config/credentials.yml.enc
+application.yml
+application.properties
+settings.local.py
+local_settings.py
+production_settings.py
+.properties
+
+# Cloud provider credentials
+.aws/
+.azure/
+.gcloud/
+.kubectl/
+gcloud-service-key.json
+*.json.enc
+.terraform/
+terraform.tfstate*
+.terraformrc
+terraform.rc
+
+# Docker secrets
+docker-compose.override.yml
+.dockerignore
+Dockerfile.local
+
+# =========================
+# ADDITIONAL DEVELOPMENT FILES
+# =========================
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+.#*
+#*#
+*.orig
+*.rej
+*.conflict
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bz2
+*.xz
+
+# Log files
+*.log
+logs/
+log/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+.grunt/
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.atom/
+.brackets.json
+*.code-workspace
+.history/
+.vscode-test/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+.netrwhist
+tags
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# =========================
+# OS SPECIFIC FILES
+# =========================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =========================
+# BUILD & DEPLOYMENT
+# =========================
+
+# Build directories
+build/
+builds/
+dist/
+target/
+bin/
+obj/
+release/
+debug/
+
+# Package managers
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Deployment
+deploy/
+deployment/
+.deploy/
+.deployment
+
+# =========================
+# CACHE & TEMPORARY
+# =========================
+
+# Various caches
+.cache/
+*.cache
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.firebase/
+.nuxt/
+.output/
+.turbo/
+
+# Runtime directories
+tmp/
+temp/
+.tmp/
+.temp/
+
+# =========================
+# TESTING & COVERAGE
+# =========================
+
+# Test results
+test-results/
+coverage/
+.nyc_output/
+junit.xml
+test-report.xml
+
+# =========================
+# MISCELLANEOUS
+# =========================
+
+# Local configuration
+.local
+local/
+.config/
+config/local.*
+
+# Documentation build
+docs/_build/
+site/
+_site/
+
+# Profiling
+*.prof
+
+# Memory dumps
+*.dmp
+*.dump
+heapdump*
+
+# Performance data
+*.cpuprofile
+*.heapsnapshot
+
+# Network
+.netrc
+
+# Personal notes
+TODO.md
+NOTES.md
+notes.txt
+todo.txt
+.notes

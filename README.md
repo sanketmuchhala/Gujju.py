@@ -1,14 +1,14 @@
-# 🧡 KemLang
+# KemLang
 
 **A Gujarati-flavored, English-typed programming language**
 
 KemLang is a fun, educational programming language inspired by Bhailang, featuring Gujarati keywords and expressions while maintaining English-based syntax. It's designed to be approachable for Gujarati speakers learning programming concepts.
 
-[![CI](https://github.com/kemlang/kemlang/actions/workflows/ci.yml/badge.svg)](https://github.com/kemlang/kemlang/actions/workflows/ci.yml)
+[![CI](https://github.com/sanketmuchhala/Gujju.py/actions/workflows/ci.yml/badge.svg)](https://github.com/sanketmuchhala/Gujju.py/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-## ✨ Features
+## Features
 
 - **Gujarati-flavored keywords**: `kem bhai`, `bhai bol`, `bapu tame bolo`
 - **English-typed syntax**: Easy to type on any keyboard
@@ -18,34 +18,34 @@ KemLang is a fun, educational programming language inspired by Bhailang, featuri
 - **VS Code support**: Syntax highlighting extension included
 - **Web playground**: Interactive browser-based code editor
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
-#### 🚀 **NPM (Recommended - Like Bhailang)**
+#### **NPM (Recommended - Like Bhailang)**
 ```bash
 npm install -g kemlang
 ```
 
-#### 🐍 **One-liner Install Script**
+#### **One-liner Install Script**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kemlang/kemlang/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/sanketmuchhala/Gujju.py/main/install.sh | bash
 ```
 
-#### 📦 **Python/Pip (Direct)**
+#### **Python/Pip (Direct)**
 ```bash
 # From PyPI (when available)
 pip install kemlang
 
 # From source
-git clone https://github.com/kemlang/kemlang
+git clone https://github.com/sanketmuchhala/Gujju.py
 cd kemlang
 pip install -e .
 ```
 
-#### 🛠️ **Developer Setup**
+#### **Developer Setup**
 ```bash
-git clone https://github.com/kemlang/kemlang
+git clone https://github.com/sanketmuchhala/Gujju.py
 cd kemlang
 pip install -e ".[dev,test]"
 ```
@@ -69,7 +69,7 @@ kem run hello.jsk
 # Output: kem cho, Sanket!
 ```
 
-## 📚 Language Reference
+## Language Reference
 
 ### Program Structure
 
@@ -139,7 +139,7 @@ primary      := INT | STRING | BOOL | IDENT | "(" expr ")" | "bapu tame bolo"
 BOOL         := "bhai chhe" | "bhai nathi"
 ```
 
-## 🔧 CLI Usage
+## CLI Usage
 
 ```bash
 # Run a KemLang file
@@ -165,7 +165,7 @@ kem ast file.jsk
 kem version
 ```
 
-## 📝 Examples
+## Examples
 
 ### Variables and Arithmetic
 
@@ -222,30 +222,24 @@ jo naam == "Sanket" {
 aavjo bhai
 ```
 
-## 🎨 Error Messages
+## Error Messages
 
 KemLang provides helpful error messages with source context:
-
-```
 Error: Undefined variable 'typo'
- --> line 3:9
+--> line 3:9
 3 | bhai bol typo
-  |         ^
-```
-
-```
-Runtime Error: TypeError: cannot `+` int and str
- --> line 2:15
+| ^
+Runtime Error: TypeError: cannot + int and str
+--> line 2:15
 2 | bhai bol 5 + "hello"
-  |               ^
-```
+| ^
 
-## 🛠️ Development
+## Development
 
 ### Setup
 
 ```bash
-git clone https://github.com/kemlang/kemlang
+git clone https://github.com/sanketmuchhala/Gujju.py
 cd kemlang
 pip install -e ".[dev,test]"
 pre-commit install
@@ -284,9 +278,9 @@ python app.py
 # Open http://localhost:5000
 ```
 
-**⚠️ Security Warning**: The web playground is for development only. It executes code without sandboxing.
+**Security Warning**: The web playground is for development only. It executes code without sandboxing.
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] **Functions**: `function naam(args) { ... }`
 - [ ] **Arrays**: `[1, 2, 3]` and `obj[index]`
@@ -298,7 +292,7 @@ python app.py
 - [ ] **Package Manager**: Dependency management
 - [ ] **Language Server**: IDE integration with LSP
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -316,22 +310,22 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 This project follows our [Code of Conduct](CODE_OF_CONDUCT.md). Please be respectful and inclusive.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by [Bhailang](https://github.com/DulLabs/bhai-lang)
 - Built with Python, Typer, and Rich
 - Special thanks to the Gujarati programming community
 
-## 📞 Support
+## Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/kemlang/kemlang/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/kemlang/kemlang/discussions)
-- 📧 **Email**: [Support](mailto:support@kemlang.dev)
+- **Issues**: [GitHub Issues](https://github.com/sanketmuchhala/Gujju.py/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/sanketmuchhala/Gujju.py/discussions)
+- **Email**: [Support](mailto:support@kemlang.dev)
 
 ---
 
-Made with 🧡 for the Gujarati developer community
+Made with love for the Gujarati developer community
