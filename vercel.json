@@ -1,5 +1,14 @@
 {
+  "version": 2,
   "buildCommand": "cd kemlang-website && npm install && npm run build",
-  "outputDirectory": "out",
-  "installCommand": "cd kemlang-website && npm install"
+  "outputDirectory": "kemlang-website/out",
+  "installCommand": "cd kemlang-website && npm install",
+  "framework": null,
+  "functions": {},
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
