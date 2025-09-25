@@ -31,33 +31,33 @@ KemLang follows a modular architecture with clear separation of concerns across 
 
 ```mermaid
 graph TB
-    subgraph "🌐 User Interface Layer"
+    subgraph "User Interface Layer"
         CLI[CLI Tool]
         Web[Web Playground]
         VSCode[VS Code Extension]
         Website[Documentation Website]
     end
 
-    subgraph "🧠 Core Language Engine"
+    subgraph "Core Language Engine"
         Parser[Parser Engine]
         Lexer[Lexical Analyzer]
         AST[AST Generator]
         Interpreter[Interpreter Engine]
     end
 
-    subgraph "🔧 Development Tools"
+    subgraph "Development Tools"
         Formatter[Code Formatter]
         Debugger[Debug Tools]
         REPL[Interactive REPL]
     end
 
-    subgraph "📦 Distribution"
+    subgraph "Distribution"
         PyPI[Python Package]
         NPM[Node Package]
         Docker[Docker Images]
     end
 
-    subgraph "☁️ Cloud Platform"
+    subgraph "Cloud Platform"
         Vercel[Vercel Hosting]
         GitHub[GitHub Actions]
     end
@@ -82,11 +82,11 @@ graph TB
     GitHub --> Vercel
 
     %% Styling
-    classDef userInterface fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
-    classDef coreEngine fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef devTools fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
-    classDef distribution fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    classDef cloud fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef userInterface fill:#e1f5fe,stroke:#0277bd,stroke-width:3px,color:#000
+    classDef coreEngine fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000
+    classDef devTools fill:#e8f5e8,stroke:#388e3c,stroke-width:3px,color:#000
+    classDef distribution fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#000
+    classDef cloud fill:#fce4ec,stroke:#c2185b,stroke-width:3px,color:#000
 
     class CLI,Web,VSCode,Website userInterface
     class Parser,Lexer,AST,Interpreter coreEngine
@@ -114,36 +114,36 @@ The following diagram illustrates how KemLang code flows through the system from
 
 ```mermaid
 flowchart TD
-    subgraph "📝 Input Sources"
+    subgraph "Input Sources"
         File[".jsk Files"]
         REPL_Input[REPL Input]
         Web_Editor[Web Editor]
     end
 
-    subgraph "🔍 Lexical Analysis"
+    subgraph "Lexical Analysis"
         Tokenizer[Tokenizer]
         TokenStream[Token Stream]
     end
 
-    subgraph "🌳 Syntax Analysis"
+    subgraph "Syntax Analysis"
         SyntaxParser[Syntax Parser]
         ASTBuilder[AST Builder]
         SyntaxTree[Abstract Syntax Tree]
     end
 
-    subgraph "✅ Semantic Analysis"
+    subgraph "Semantic Analysis"
         TypeChecker[Type Checker]
         ScopeAnalyzer[Scope Analyzer]
         ErrorReporter[Error Reporter]
     end
 
-    subgraph "⚡ Execution Engine"
+    subgraph "Execution Engine"
         TreeWalker[Tree Walker]
         RuntimeEnv[Runtime Environment]
         BuiltinFunctions[Built-in Functions]
     end
 
-    subgraph "📤 Output Channels"
+    subgraph "Output Channels"
         Console[Console Output]
         WebOutput[Web Playground Output]
         ErrorOutput[Error Messages]
@@ -180,12 +180,12 @@ flowchart TD
     TreeWalker -.->|Runtime Errors| ErrorOutput
 
     %% Styling
-    classDef input fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
-    classDef lexical fill:#f1f8e9,stroke:#689f38,stroke-width:2px
-    classDef syntax fill:#fce4ec,stroke:#ad1457,stroke-width:2px
-    classDef semantic fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
-    classDef execution fill:#e8eaf6,stroke:#5e35b1,stroke-width:2px
-    classDef output fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef input fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000
+    classDef lexical fill:#f1f8e9,stroke:#689f38,stroke-width:3px,color:#000
+    classDef syntax fill:#fce4ec,stroke:#ad1457,stroke-width:3px,color:#000
+    classDef semantic fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000
+    classDef execution fill:#e8eaf6,stroke:#5e35b1,stroke-width:3px,color:#000
+    classDef output fill:#e0f2f1,stroke:#00695c,stroke-width:3px,color:#000
 
     class File,REPL_Input,Web_Editor input
     class Tokenizer,TokenStream lexical
@@ -212,39 +212,39 @@ KemLang uses a modern cloud-native deployment strategy across multiple platforms
 
 ```mermaid
 graph TB
-    subgraph "👨‍💻 Developer Workflow"
+    subgraph "Developer Workflow"
         DevLocal[Local Development]
         DevCommit[Git Commit]
         DevPR[Pull Request]
     end
 
-    subgraph "🔄 CI/CD Pipeline"
+    subgraph "CI/CD Pipeline"
         GitHub_Actions[GitHub Actions]
         Tests[Automated Tests]
         Build[Build Artifacts]
         Security[Security Scan]
     end
 
-    subgraph "📦 Package Repositories"
+    subgraph "Package Repositories"
         PyPI_Deploy[PyPI Package]
         NPM_Deploy[NPM Package]
         Docker_Hub[Docker Hub]
     end
 
-    subgraph "☁️ Hosting Infrastructure"
+    subgraph "Hosting Infrastructure"
         Vercel_Main[Vercel Production]
         Vercel_Preview[Vercel Preview]
         CDN[Global CDN]
     end
 
-    subgraph "🌍 User Access Points"
+    subgraph "User Access Points"
         Website_Users[Website Users]
         CLI_Users[CLI Users]
         VS_Code_Users[VS Code Users]
         Docker_Users[Docker Users]
     end
 
-    subgraph "📊 Monitoring & Analytics"
+    subgraph "Monitoring & Analytics"
         Vercel_Analytics[Vercel Analytics]
         GitHub_Insights[GitHub Insights]
         Error_Tracking[Error Tracking]
@@ -280,12 +280,12 @@ graph TB
     Vercel_Main --> Error_Tracking
 
     %% Styling
-    classDef developer fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef cicd fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-    classDef packages fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
-    classDef hosting fill:#fce4ec,stroke:#c2185b,stroke-width:2px
-    classDef users fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef monitoring fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef developer fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px,color:#000
+    classDef cicd fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#000
+    classDef packages fill:#fff3e0,stroke:#ef6c00,stroke-width:3px,color:#000
+    classDef hosting fill:#fce4ec,stroke:#c2185b,stroke-width:3px,color:#000
+    classDef users fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000
+    classDef monitoring fill:#e0f2f1,stroke:#00695c,stroke-width:3px,color:#000
 
     class DevLocal,DevCommit,DevPR developer
     class GitHub_Actions,Tests,Build,Security cicd
