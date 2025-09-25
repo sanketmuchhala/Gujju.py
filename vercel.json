@@ -1,14 +1,5 @@
 {
-  "version": 2,
-  "buildCommand": "cd kemlang-website && npm install && npm run build",
-  "outputDirectory": "kemlang-website/out",
-  "installCommand": "cd kemlang-website && npm install",
-  "framework": null,
-  "functions": {},
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
+  "buildCommand": "cd kemlang-website && npm install && npm run build:vercel",
+  "outputDirectory": "kemlang-website/public",
+  "installCommand": "cd kemlang-website && npm install"
 }
