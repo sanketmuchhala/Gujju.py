@@ -6,15 +6,9 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
-  output: 'export',
   trailingSlash: true,
-  skipTrailingSlashRedirect: true,
   images: {
     unoptimized: true,
-  },
-  distDir: '.next',
-  generateBuildId: async () => {
-    return 'build'
   },
 }
 

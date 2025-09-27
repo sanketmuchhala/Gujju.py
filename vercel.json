@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd kemlang-website && npm install && npm run build:vercel",
-  "outputDirectory": "kemlang-website/public",
-  "framework": null
+  "buildCommand": "cd kemlang-website && npm install && npm run build",
+  "outputDirectory": "kemlang-website/.next",
+  "framework": "nextjs"
 }

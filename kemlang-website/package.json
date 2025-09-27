@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:vercel": "rm -rf public && next build && cp -r out public",
     "start": "next start",
     "lint": "next lint"
   },
