@@ -1,7 +1,11 @@
 import pytest
 from kemlang.parser import Parser, parse_program, ParseError
 from kemlang.lexer import tokenize
-from kemlang.types import *
+from kemlang.types import (
+    Program, Block, Stmt, Expr,
+    Print, Declaration, Assignment, If, While, Break, Continue,
+    Binary, Unary, Literal, Variable, Input, TokenType
+)
 
 
 class TestParser:

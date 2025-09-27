@@ -194,4 +194,4 @@ def format_code(source: str) -> str:
         formatter = Formatter()
         return formatter.format_program(program)
     except Exception as e:
-        raise ValueError(f"Cannot format invalid code: {str(e)}")
+        raise ValueError(f"Cannot format invalid code: {str(e)}") from e

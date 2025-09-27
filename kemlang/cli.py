@@ -1,6 +1,5 @@
 import sys
 from pathlib import Path
-from typing import Optional
 import typer
 from rich.console import Console
 from rich.syntax import Syntax
@@ -63,7 +62,7 @@ def run_file(
         console.print(f"[red]Error: File '{file}' not found[/red]")
         raise typer.Exit(1)
 
-    if not file.suffix == '.jsk':
+    if file.suffix != '.jsk':
         console.print(f"[yellow]Warning: File '{file}' doesn't have .jsk extension[/yellow]")
 
     try:
@@ -92,10 +91,10 @@ def run_file(
     except KemError as e:
         diagnostic = render_diagnostic(source, e.line, e.col, e.message, type(e).__name__)
         console.print(f"[red]{diagnostic}[/red]")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from e
     except Exception as e:
         console.print(f"[red]Error: {str(e)}[/red]")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from e
 
 
 @app.command()
@@ -176,6 +175,7 @@ def fmt(
 
         except Exception as e:
             console.print(f"[red]Error formatting {file}: {str(e)}[/red]")
+            raise
 
     if check and changed_files:
         console.print(f"[red]{len(changed_files)} file(s) need formatting[/red]")
@@ -199,7 +199,7 @@ def tokens(file: Path = typer.Argument(..., help="KemLang file to tokenize")):
 
     except Exception as e:
         console.print(f"[red]Error: {str(e)}[/red]")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from e
 
 
 @app.command()
@@ -220,10 +220,10 @@ def ast(file: Path = typer.Argument(..., help="KemLang file to parse")):
     except KemError as e:
         diagnostic = render_diagnostic(source, e.line, e.col, e.message, type(e).__name__)
         console.print(f"[red]{diagnostic}[/red]")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from e
     except Exception as e:
         console.print(f"[red]Error: {str(e)}[/red]")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from e
 
 
 @app.command()
