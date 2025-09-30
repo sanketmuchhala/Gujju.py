@@ -299,7 +299,7 @@ graph TB
 
 | Environment | Platform | Purpose | URL |
 |-------------|----------|---------|-----|
-| **Production** | Vercel | Main website & playground | https://kemlang.dev |
+| **Production** | Vercel | Main website & playground | https://gujju-py.vercel.app/ |
 | **Preview** | Vercel | PR previews | Auto-generated URLs |
 | **CLI Package** | PyPI | Python package distribution | `pip install kemlang` |
 | **Web Assets** | NPM | JavaScript/TypeScript modules | `npm install kemlang` |
