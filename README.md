@@ -315,7 +315,7 @@ graph TB
 - **CLI tools**: Run, format, debug, and analyze KemLang code
 - **VS Code support**: Syntax highlighting extension included
 - **Web playground**: Interactive browser-based code editor
-- **Comprehensive docs**: Full documentation at [kemlang.dev](https://kemlang.dev)
+- **Comprehensive docs**: Full documentation at [https://gujju-py.vercel.app/]([https://kemlang.dev](https://gujju-py.vercel.app/docs))
 
 ---
 
